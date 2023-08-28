@@ -5,6 +5,9 @@ import HomeModal from './HomeModal'
 
 const Home = () => {
 
+
+
+
   // поиск 
   // function findElement(array, target) {
   //   for (let i = 0; i < array.length; i++) {
@@ -25,6 +28,17 @@ const Home = () => {
   // } else {
   //   console.log(`Элемент ${targetElement} не найден в массиве.`);
   // }
+
+
+
+
+
+
+
+
+
+
+
 
 
   // сортировка 
@@ -48,9 +62,17 @@ const Home = () => {
 
   // const myArrayTwo = [64, 34, 25, 12, 22, 11, 90];
   // const sortedArray = Sort(myArrayTwo);
-  
-
   // console.log("Отсортированный массив:", sortedArray);
+
+
+
+
+
+
+
+
+
+
 
 
   // реверс
@@ -63,8 +85,12 @@ const Home = () => {
 // }
 
 // const originalArray = [1, 2, 3, 4, 5];
-
 // console.log("Реверсированный массив:", reverseArray(originalArray));
+
+
+
+
+
 
 
 // копирование
@@ -79,12 +105,16 @@ const Home = () => {
 
 // const originalArray = [1, 2, 3, 4, 5];
 // const copiedArray = customSlice(originalArray, 0, 5);
-
 // console.log("Исходный массив:", originalArray);
 // console.log("Скопированный массив:", copiedArray);
 
-//мемоизация 
 
+
+
+
+
+
+//мемоизация 
 // const memo = (fn) => {
 //   const cache = {};
 //   return (n) => {
@@ -104,6 +134,10 @@ const Home = () => {
 
 // console.log(factorial(3))
 // console.log(factorial(3))
+
+
+
+
 
 
 //рекурсивный обход обьекта
@@ -184,4 +218,5 @@ const MainButton = styled.button`
   background: transparent;
   padding: 10px 20px;
   border-radius: 10px;
+  cursor: pointer;
 `;

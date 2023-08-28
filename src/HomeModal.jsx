@@ -1,6 +1,9 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from "react-router-dom";
+import ModalInput from './components/ModalInput';
+import ModalMainText from './components/ModalMainText';
+import ModalButton from './components/ModalButton';
 
 const HomeModal = ({ openModal, setOpenModal }) => {
 
@@ -11,45 +14,40 @@ const HomeModal = ({ openModal, setOpenModal }) => {
     <Wrapper onClick={() => setOpenModal(!openModal)}>
       <Container onClick={e => e.stopPropagation()}>
 
-        <Title>This is modal window</Title>
-        <SubTitle>Enter your personal information</SubTitle>
+        <ModalMainText
+          title="This is modal window"
+          subTitle="Enter your personal information"
+        />
+        
+
         <EntryBox>
-          <InputBox>
-            <LabelTitle>First name</LabelTitle>
-            <Entry
-              type="text"
-              value={firstname}
-              onChange={(e) => {
-                setFirstname(e.target.value);
-              }}
-              name="lastname"
-              placeholder='Enter your last name'
-              
+          <ModalInput
+            labelTitle="First name"
+            value={firstname}
+            setValue={setFirstname}
+            placeholder="Enter your first name"
+          />
+          <ModalInput
+            labelTitle="Last name"
+            value={lastname}
+            setValue={setLastname}
+            placeholder="Enter your last name"
+          />
 
-            />
-          </InputBox>
-          <InputBox>
-            <LabelTitle>Last name</LabelTitle>
-            <Entry
-              type="text"
-              value={lastname}
-              onChange={(e) => {
-                setLastname(e.target.value);
-              }}
-              name="lastname"
-              placeholder='Enter your last name'
-             
-            />
-          </InputBox>
+
         </EntryBox>
-        <MainButton onClick={() => setOpenModal(!openModal)}>Ок</MainButton>
-
+        <ModalButton
+          openModal={openModal}
+          setOpenModal={setOpenModal}
+        />
       </Container>
     </Wrapper>
   )
 }
 
 export default HomeModal
+
+
 
 const Wrapper = styled.div`
   width: 100%;
@@ -82,29 +80,8 @@ const Container = styled.div`
 `;
 
 
-const Title = styled.span`
-  font-size: 24px;
-  font-weight: 700;
-  color: #86BE3F;
-`;
-const SubTitle = styled.span`
-  display: block;
-  text-align: center;
-  max-width: 500px;
-  font-size: 16px;
-  line-height: 19.5px;
-`;
-const MainButton = styled.button`
-  background: transparent;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 15px;
-  color: #ffffff;
-  background-color: #86BE3F;
-  padding: 15px 72px;
-  font-size: 16px;
-  font-weight: 700;
-`;
+
+
 const StyledLink = styled(Link)`
   :hover, :focus{
     cursor: pointer;
@@ -124,36 +101,3 @@ const EntryBox = styled.div`
   }
 `;
 
-const InputBox = styled.div`
-  position: relative;
-`;
-
-const Entry = styled.input`
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid ${(props) => props.$highlight ? "red" : "#DBDBDB"};
-  height: 32px;
-  width: 214px;
-  outline: none;
-  font-size: 14px;
-  @media screen and (max-width:690px) {
-    width: calc(100% - 20px);
-    
-  }
-  
-  
-`;
-
-const LabelTitle = styled.label`
-  position: absolute;
-  top: -7px;
-  left: 10px;
-  background: #fff;
-  color: #252525;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 0 5px;
-  
-  
-`;
