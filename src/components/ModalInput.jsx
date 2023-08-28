@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const ModalInput = ({value, setValue, placeholder, labelTitle}) => {
 
-  console.log(value)
+  
+
   
   return (
     <InputBox>
